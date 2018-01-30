@@ -4,18 +4,27 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "3.2.0",
-    "react-scripts": "1.1.0"
+    "react-scripts": "1.1.0",
+    "serve": "^6.4.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "serve -p 3000 -s build",
+    "cy:attach-open": "wait-on http-get://localhost:3000/ && cypress open",
+    "cy:attach-run": "wait-on http-get://localhost:3000/ && cypress run",
+    "cy:start": "run-p start cy:attach-open",
+    "cy:test": "run-p --race start cy:attach-run"
   },
   "devDependencies": {
-    "cypress": "^1.4.1"
+    "cypress": "^1.4.1",
+    "npm-run-all": "^4.1.2",
+    "wait-on": "^2.1.0"
   }
 }

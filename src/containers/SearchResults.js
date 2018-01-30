@@ -11,14 +11,14 @@ class SearchResults extends Component {
 
   async getSearchResults() {
     try {
-      const searchIdResponse = await client.post('/getSearchId', {
+      const searchIdResponse = await client.post('api/getSearchId', {
         testParam: 'testParamValue'
       });
 
       this.setState({ searchIdResponse: searchIdResponse.data })
       const searchId = searchIdResponse.data.searchId;
 
-      const searchResultsResponse = await client.post('/getSearchResults', { searchId });
+      const searchResultsResponse = await client.post('api/getSearchResults', { searchId });
       this.setState({ searchResults: searchResultsResponse.data })
     } catch (err) {
       this.setState({ err: err.message })
