@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+.cache
 
 # testing
 /coverage
@@ -21,5 +22,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Cypress
+.Trash-*
 /cypress/videos/*
 /cypress/screenshots/*
