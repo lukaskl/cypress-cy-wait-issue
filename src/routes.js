@@ -7,8 +7,8 @@ const searchResultsPath = 'results/:departure-:arrival/:departureDate/(:returnDa
 export const getRoutes = () => (
   <div>
     <Route path="/" component={Home}>
-      <IndexRoute />
-      <Route component={SearchResults} path={searchResultsPath} />
+      <IndexRoute component={(props) => <div>Home </div>} />
+      <Route component={SearchResults} path={searchResultsPath} >TESTS</Route>
       <Route path="/404" component={Error404} />
       <Redirect from="*" to="/404" />
     </Route>
